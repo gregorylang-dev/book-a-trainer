@@ -1,0 +1,251 @@
+import { Trainer, Plan, Message } from '../types';
+
+export const INITIAL_PLANS: Plan[] = [
+  {
+    id: 'starter-4',
+    name: 'Starter Fitness',
+    price: 169,
+    sessionsCount: 4,
+    billingCadence: 'monthly',
+    perSessionRate: 42.25,
+    tagline: '1 session per week for building consistent healthy habits',
+    features: [
+      '4 In-person sessions per month (60 min each)',
+      'Meet at your home or gym of choice',
+      'Accredited & background-checked trainer',
+      'Customized weekly fitness programming',
+      'Direct in-app messaging with your coach',
+      'Roll over unused sessions for 30 days',
+      'Cancel or pause monthly anytime'
+    ]
+  },
+  {
+    id: 'pro-8',
+    name: 'Pro Momentum',
+    price: 250,
+    sessionsCount: 8,
+    billingCadence: 'monthly',
+    perSessionRate: 31.25,
+    popular: true,
+    tagline: '2 sessions per week for rapid strength, fat loss, and transformation',
+    features: [
+      '8 In-person sessions per month (60 min each)',
+      'Meet at your home or gym of choice',
+      'Top-tier CSCS / NASM certified coaches',
+      'Bi-weekly body composition & progress tracking',
+      'Custom macronutrient & nutrition coaching',
+      'Priority 24/7 direct coach messaging',
+      'Free equipment kit for home workouts'
+    ]
+  },
+  {
+    id: 'elite-12',
+    name: 'Elite Transformation',
+    price: 349,
+    sessionsCount: 12,
+    billingCadence: 'monthly',
+    perSessionRate: 29.08,
+    tagline: '3 sessions per week for comprehensive athletic development',
+    features: [
+      '12 In-person sessions per month (60 min each)',
+      'Flexible split: In-home & gym sessions',
+      'Master trainers with 7+ years experience',
+      'Comprehensive mobility & recovery routines',
+      'Full meal planning & pantry audit consultation',
+      'Unlimited messaging & video form checks',
+      'Guaranteed schedule reservation slots'
+    ]
+  }
+];
+
+export const INITIAL_TRAINERS: Trainer[] = [
+  {
+    id: 'tr-1',
+    name: 'Marcus Vance',
+    avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+    headline: 'Strength & Conditioning Specialist | Former D1 Track Athlete',
+    primaryZip: '90210',
+    city: 'Beverly Hills / Los Angeles',
+    state: 'CA',
+    serviceRadiusMiles: 20,
+    locationsSupported: ['home', 'gym'],
+    credentials: ['NSCA-CSCS', 'NASM-PES', 'CPR/AED Certified', 'B.S. Kinesiology (UCLA)'],
+    yearsExperience: 8,
+    specialties: ['Strength & Hypertrophy', 'Athletic Conditioning', 'Mobility & Posture'],
+    blurb: 'I believe fitness should seamlessly fit into your daily life. Whether we are utilizing your garage setup, living room kettlebells, or meeting at your local Equinox, I program high-efficiency, injury-free workouts tailored to your exact biomechanics.',
+    hourlyRate: 85,
+    rating: 4.98,
+    reviewCount: 42,
+    isBackgroundChecked: true,
+    backgroundCheckDate: 'Jan 2025 (Checkr Cleared)',
+    isAccredited: true,
+    insuranceVerified: true,
+    preferredGyms: ['Equinox Sports Club', 'Gold\'s Gym Venice', 'Anytime Fitness Westwood', 'Home Private Gyms'],
+    joinedDate: '2023-04-12',
+    active: true
+  },
+  {
+    id: 'tr-2',
+    name: 'Elena Rostova',
+    avatarUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80',
+    headline: 'Functional Movement, Core & Post-Rehab Training',
+    primaryZip: '10001',
+    city: 'New York',
+    state: 'NY',
+    serviceRadiusMiles: 15,
+    locationsSupported: ['home', 'gym'],
+    credentials: ['NASM-CPT', 'FMS Level 2', 'Precision Nutrition Level 1', 'AHA CPR/AED'],
+    yearsExperience: 6,
+    specialties: ['Functional Movement', 'Weight Loss', 'Pilates & Core Stability', 'Post-Physical Therapy'],
+    blurb: 'Specializing in sustainable body transformation for busy professionals. I bring resistance bands, dumbbells, and agility gear directly to your apartment or meet you at your residential/commercial gym. My focus is bulletproofing joints and posture.',
+    hourlyRate: 90,
+    rating: 4.95,
+    reviewCount: 38,
+    isBackgroundChecked: true,
+    backgroundCheckDate: 'Feb 2025 (Checkr Cleared)',
+    isAccredited: true,
+    insuranceVerified: true,
+    preferredGyms: ['Chelsea Piers Fitness', 'Crunch Union Square', 'Residential Condos', 'TMPL West Village'],
+    joinedDate: '2023-08-19',
+    active: true
+  },
+  {
+    id: 'tr-3',
+    name: 'Darius Thorne',
+    avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
+    headline: 'HIIT, Kettlebells & Metabolic Fat Loss Coach',
+    primaryZip: '60601',
+    city: 'Chicago',
+    state: 'IL',
+    serviceRadiusMiles: 18,
+    locationsSupported: ['home', 'gym'],
+    credentials: ['ACE-CPT', 'RKC Kettlebell Master', 'CrossFit-L2', 'Red Cross CPR/AED'],
+    yearsExperience: 9,
+    specialties: ['High-Intensity Interval Training', 'Kettlebells', 'Fat Loss', 'Boxing Conditioning'],
+    blurb: 'No fluff, just science-backed metabolic burn that builds grit and lean muscle. I love coaching clients right in their homes or condo workout rooms. I bring all necessary gear, program your nutrition, and keep motivation on fire.',
+    hourlyRate: 80,
+    rating: 4.92,
+    reviewCount: 29,
+    isBackgroundChecked: true,
+    backgroundCheckDate: 'Jan 2025 (Sterling Cleared)',
+    isAccredited: true,
+    insuranceVerified: true,
+    preferredGyms: ['East Bank Club', 'Lakeshore Sport & Fitness', 'Planet Fitness Loop', 'Home Living Rooms'],
+    joinedDate: '2022-11-05',
+    active: true
+  },
+  {
+    id: 'tr-4',
+    name: 'Samantha "Sam" Chen',
+    avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
+    headline: 'Pre/Post-Natal & Women\'s Strength Specialist',
+    primaryZip: '94102',
+    city: 'San Francisco',
+    state: 'CA',
+    serviceRadiusMiles: 15,
+    locationsSupported: ['home'],
+    credentials: ['NASM-CPT', 'Girls Gone Strong Pre/Postnatal (GGS)', 'ACE-CES', 'CPR/AED'],
+    yearsExperience: 7,
+    specialties: ['Pre/Post-Natal Care', 'Diastasis Recti Recovery', 'Pelvic Floor Health', 'Safe Strength'],
+    blurb: 'New motherhood or expecting? I exclusively provide home visits so moms do not have to stress about childcare, travel, or gym germs. We train comfortably in your living room or backyard with supportive, evidence-based pelvic-safe routines.',
+    hourlyRate: 95,
+    rating: 5.0,
+    reviewCount: 31,
+    isBackgroundChecked: true,
+    backgroundCheckDate: 'March 2025 (Checkr Cleared)',
+    isAccredited: true,
+    insuranceVerified: true,
+    preferredGyms: ['Home Visits Only (Living Room / Patio / Nursery)'],
+    joinedDate: '2023-01-20',
+    active: true
+  },
+  {
+    id: 'tr-5',
+    name: 'Javier Morales',
+    avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
+    headline: 'Boxing, Calisthenics & Athletic Conditioning',
+    primaryZip: '33139',
+    city: 'Miami Beach',
+    state: 'FL',
+    serviceRadiusMiles: 25,
+    locationsSupported: ['home', 'gym'],
+    credentials: ['ISSA-CPT', 'USA Boxing Certified Coach', 'ACSM-EP', 'CPR/AED'],
+    yearsExperience: 10,
+    specialties: ['Boxing & Mittwork', 'Calisthenics & Agility', 'Cardiovascular Health'],
+    blurb: 'High energy boxing mitts, bodyweight power, and cardiovascular conditioning. Ready to meet you at the beach, in your condo gym, or your driveway. Bring a towel and your focus; I supply the gloves, mitts, and heart-pounding intervals.',
+    hourlyRate: 85,
+    rating: 4.97,
+    reviewCount: 54,
+    isBackgroundChecked: true,
+    backgroundCheckDate: 'Dec 2024 (Sterling Cleared)',
+    isAccredited: true,
+    insuranceVerified: true,
+    preferredGyms: ['South Beach Boxing', 'Equinox South Beach', 'Flamingo Park Outdoor', 'Home Condo Gym'],
+    joinedDate: '2022-06-15',
+    active: true
+  },
+  {
+    id: 'tr-6',
+    name: 'Kendall Brooks',
+    avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80',
+    headline: 'Senior Longevity & Mobility Coach | Physical Therapy Aide',
+    primaryZip: '75001',
+    city: 'Dallas',
+    state: 'TX',
+    serviceRadiusMiles: 20,
+    locationsSupported: ['home', 'gym'],
+    credentials: ['ACSM-CPT', 'NASM Senior Fitness Specialist (SFS)', 'Balance & Fall Prevention Certified'],
+    yearsExperience: 11,
+    specialties: ['Active Aging & Balance', 'Joint Mobility', 'Osteoporosis Safe Training', 'General Fitness'],
+    blurb: 'My passion is keeping individuals moving freely and pain-free at any age. We work on balance, fall prevention, joint stability, and functional vitality in the quiet privacy of your residence or your preferred fitness center.',
+    hourlyRate: 80,
+    rating: 4.99,
+    reviewCount: 47,
+    isBackgroundChecked: true,
+    backgroundCheckDate: 'Jan 2025 (Checkr Cleared)',
+    isAccredited: true,
+    insuranceVerified: true,
+    preferredGyms: ['Lifetime Fitness Dallas', 'Cooper Fitness Center', 'In-Home Living Rooms'],
+    joinedDate: '2021-09-10',
+    active: true
+  }
+];
+
+export const INITIAL_MESSAGES: Record<string, Message[]> = {
+  'tr-1': [
+    {
+      id: 'msg-1',
+      trainerId: 'tr-1',
+      sender: 'trainer',
+      text: 'Hello! I am Coach Marcus Vance. Thanks for connecting. Are you looking to train at your home or at a local gym facility in the area?',
+      timestamp: 'Yesterday at 4:15 PM',
+      status: 'read'
+    },
+    {
+      id: 'msg-2',
+      trainerId: 'tr-1',
+      sender: 'user',
+      text: 'Hi Marcus! Looking for someone to come to my home in 90210. I have a pair of adjustable dumbbells and an exercise mat.',
+      timestamp: 'Yesterday at 4:22 PM',
+      status: 'read'
+    },
+    {
+      id: 'msg-3',
+      trainerId: 'tr-1',
+      sender: 'trainer',
+      text: 'That setup is great to start! I bring extra resistance bands, suspension trainer straps, and kettlebells in my mobile kit. Would you like to schedule our first consultation session this week?',
+      timestamp: 'Yesterday at 4:26 PM',
+      status: 'read'
+    }
+  ],
+  'tr-2': [
+    {
+      id: 'msg-201',
+      trainerId: 'tr-2',
+      sender: 'trainer',
+      text: 'Hi there! Elena here. I received your inquiry about core and functional posture training in NYC. Which location works best for your schedule?',
+      timestamp: 'Today at 10:05 AM',
+      status: 'read'
+    }
+  ]
+};

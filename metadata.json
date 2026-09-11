@@ -1,0 +1,6 @@
+{
+  "name": "BookATrainer - Local Fitness Trainers",
+  "description": "Find vetted local fitness trainers who meet at your home or gym by zip code. Featuring secure Stripe payments, vetting standards, and direct trainer messaging.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
